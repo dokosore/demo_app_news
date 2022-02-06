@@ -1,0 +1,35 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+    
+      {
+        "name": "iPhone 13",
+        "request": "launch",
+        "type": "dart",
+        "args": [
+          "--dart-define=FLAVOR=dev",
+          "-d",
+          "iPhone 13",
+        ],
+        "flutterMode": "debug",
+      },
+      {
+        "name": "Pixel 5",
+        "request": "launch",
+        "type": "dart",
+        "args": [
+          "--dart-define=FLAVOR=dev",
+          "-d",
+          "Pixel 5",
+        ],
+        "flutterMode": "debug",
+      },
+      {
+        "name": "popa (profile mode)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "profile"
+      }
+    ]
+  }
