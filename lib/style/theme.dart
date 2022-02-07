@@ -52,9 +52,9 @@ final textTheme = TextTheme(
   ),
   bodyText2: TextStyle(
     fontFamily: "NotoSansJP",
-    color: textColor,
+    color: grayTextColor,
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
   ),
 );
 
@@ -80,9 +80,11 @@ final appBarTheme = AppBarTheme(
 );
 
 // BottomNavigationBar
+const double bottomNavigationBarHeight = 56;
 final bottomNavigationBarTheme = BottomNavigationBarThemeData(
   selectedItemColor: textColor,
   unselectedItemColor: grayTextColor,
+  type: BottomNavigationBarType.fixed,
   elevation: 0,
   selectedLabelStyle: TextStyle(
     fontFamily: "NotoSansJP",

@@ -11,7 +11,11 @@ class AppbarContent extends ConsumerWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
-      title: Text(title),
+      title: Container(
+        margin: const EdgeInsets.only(right: 2),
+        height: 24,
+        child: Image.asset("assets/images/logo.png"),
+      ),
       actions: [
         Container(
           margin: const EdgeInsets.only(right: 16),

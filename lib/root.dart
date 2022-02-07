@@ -52,11 +52,10 @@ class Layout extends HookConsumerWidget {
     ];
 
     Widget bottomNavigationBar = SizedBox(
-      height: 72,
+      height: bottomNavigationBarHeight,
       child: BottomNavigationBar(
         items: navigationItems,
         currentIndex: _currentBottomNavigation,
-        type: BottomNavigationBarType.fixed,
         onTap: (int index) {
           ref.read(currentBottomNavigation.notifier).setCurrentIndex(index);
         },
