@@ -3,8 +3,27 @@ import 'package:demo_app_news/style/theme.dart';
 import 'package:demo_app_news/widgets/appbar_content.dart';
 import 'package:demo_app_news/widgets/menu_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+// デモ用
+class Article {
+  Article({
+    required this.title,
+    required this.image,
+  });
+  final String title;
+  final String image;
+}
+
+final articleList = [
+  Article(title: "サッカー日本代表選 W杯をかけた今日のスタメンは...?", image: "soccer"),
+  Article(title: "大学共通テストで不正行為か SNSでカンニングの依頼!?", image: "classroom"),
+  Article(title: "NASAの衛星が捉えた怪しい光の正体はUFO? 国際宇宙ステーションへ特別インタビュー", image: "nasa"),
+  Article(
+    title: "バイデン大統領が語る 米連邦議会乱入から1年経った今、トランプ前大統領の支持者に何を思っているのか",
+    image: "whitehouse",
+  ),
+];
 
 class HomePage extends HookConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,22 +58,6 @@ class _HomePage extends HookConsumerWidget {
     );
   }
 }
-
-class Article {
-  Article({
-    required this.title,
-    required this.image,
-  });
-  final String title;
-  final String image;
-}
-
-final articleList = [
-  Article(title: "サッカー日本代表選 W杯をかけた今日のスタメンは...?", image: "soccer"),
-  Article(title: "大学共通テストで不正行為か SNSでカンニングの依頼!?", image: "classroom"),
-  Article(title: "NASAの衛星が捉えた怪しい光の正体はUFO? 国際宇宙ステーションへ特別インタビュー", image: "nasa"),
-  Article(title: "バイデン大統領が語る 米連邦議会乱入の責任", image: "whitehouse"),
-];
 
 class _TopNewsList extends HookConsumerWidget {
   @override
@@ -195,7 +198,7 @@ class _LargeNewsBox extends HookConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  articleList[i].title,
+                  ViewFunctions().cuttedText(articleList[i].title, 36),
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1
